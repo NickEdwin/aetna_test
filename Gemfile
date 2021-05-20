@@ -31,6 +31,7 @@ group :test do
   gem 'minitest-reporters'
   gem 'faraday'
   gem 'vcr'
+  gem 'webmock'
 end
 
 
