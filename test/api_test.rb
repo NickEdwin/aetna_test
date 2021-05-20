@@ -5,9 +5,18 @@ require 'minitest/autorun'
 class ApiTest < Minitest::Test
 
   def test_no_api_key
-    make_request('?s=star', 'http://www.omdbapi.com/')
-    puts last_response.body
+    def conn
+      Faraday.new(url: "http://www.omdbapi.com/")
+    end
 
-    # TODO: Add the assertion described in readme
+    response = conn.get("?t=movies")
+    json = JSON.parse(response.body, symbolize_names: true)
+
+    assert_equal "False", json[:Response]
+    assert_equal "No API key provided.", json[:Error]
+    ## Test shows that when API Key not provided user can not retrieve data from API
+    ## Reponse == {:Response=>"False", :Error=>"No API key provided."}
   end
+
+  
 end
