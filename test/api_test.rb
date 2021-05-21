@@ -83,7 +83,7 @@ class ApiTest < Minitest::Test
   end
 
   def test_no_broken_posters
-    #Wish the convenient post api was free!
+    #Wish the convenient poster api was free!
     #Searches DB for movies with "Spider" in the name and resturns 1st page of results
     response = conn.get("?apikey=#{ENV['OMDB_API_KEY']}&s=spider&page=1")
     json = JSON.parse(response.body, symbolize_names: true)
