@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 
 gem 'rails', '~> 6.0.3', '>= 6.0.3.7'
-gem 'sqlite3', '~> 1.4'
+gem 'pg'
 gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
@@ -30,6 +30,8 @@ group :test do
   gem 'minitest'
   gem 'minitest-reporters'
   gem 'faraday'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 
