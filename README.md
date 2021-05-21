@@ -40,7 +40,13 @@ To setup locally:
     * `rails db:create`  
     * `ruby test/api_test.rb` to see tests run.  
 
-When you run `rspec` you should have all test currently passing.   
+** NOTE **   
+So as to not expost my personal API key publicly the figaro gem ([Found here](https://github.com/laserlemon/figaro)) was used.  
+This gem hides sensitive information from GitHub repositories.  
+To run tests and make API calls you must replace `ENV[OMDB_API_KEY]` in all tests with your personal API key!  
+
+When you run the testing file you should have all tests but one currently passing.  
+This is due the results not being unique as the test asserts them to be.  
 
 ## Limitations  
 I found this API resource to be fairly limited in its responses.   
